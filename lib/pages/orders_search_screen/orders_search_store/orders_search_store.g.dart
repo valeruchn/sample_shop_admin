@@ -82,22 +82,22 @@ mixin _$OrdersSearchStore on _OrdersSearchStore, Store {
   }
 
   @override
-  void addSearchStartDateFilter(DateTime? startDate) {
+  void _addSearchStartDateFilter(DateTime? startDate) {
     final _$actionInfo = _$_OrdersSearchStoreActionController.startAction(
-        name: '_OrdersSearchStore.addSearchStartDateFilter');
+        name: '_OrdersSearchStore._addSearchStartDateFilter');
     try {
-      return super.addSearchStartDateFilter(startDate);
+      return super._addSearchStartDateFilter(startDate);
     } finally {
       _$_OrdersSearchStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void addSearchEndDateFilter(DateTime? endDate) {
+  void _addSearchEndDateFilter(DateTime? endDate) {
     final _$actionInfo = _$_OrdersSearchStoreActionController.startAction(
-        name: '_OrdersSearchStore.addSearchEndDateFilter');
+        name: '_OrdersSearchStore._addSearchEndDateFilter');
     try {
-      return super.addSearchEndDateFilter(endDate);
+      return super._addSearchEndDateFilter(endDate);
     } finally {
       _$_OrdersSearchStoreActionController.endAction(_$actionInfo);
     }

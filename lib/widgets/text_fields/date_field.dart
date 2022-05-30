@@ -15,18 +15,23 @@ class DateField extends StatelessWidget {
     return GestureDetector(
       onTap: action,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 5.0),
         height: 30.00,
         width: _size.width * 0.40,
         decoration: BoxDecoration(border: Border.all()),
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Flexible(flex: 3, child: Text(date)),
-          Flexible(
-              flex: 1,
-              child:
-                  IconButton(onPressed: reset, icon: const Icon(Icons.cancel)))
-        ]),
+        child: Container(
+          padding: const EdgeInsets.all(5.00),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Flexible(flex: 3, fit: FlexFit.tight, child: Text(date)),
+            Flexible(
+                flex: 1,
+                child: IconButton(
+                    iconSize: 17.00,
+                    padding: const EdgeInsets.all(0.00),
+                    onPressed: reset,
+                    icon: const Icon(Icons.cancel)))
+          ]),
+        ),
       ),
     );
   }

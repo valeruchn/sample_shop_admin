@@ -40,12 +40,14 @@ class ServiceLocator {
     GetIt.I.registerLazySingleton<ProductsStore>(
         () => ProductsStore(productsRepo: GetIt.I<ProductsRepoImp>()));
     GetIt.I.registerLazySingleton<HomeStore>(() => HomeStore());
-    GetIt.I.registerLazySingleton<OrdersSearchStore>(() => OrdersSearchStore());
+    GetIt.I.registerLazySingleton<OrdersSearchStore>(() => OrdersSearchStore(
+        navigatorState: GetIt.I<GlobalKey<NavigatorState>>()));
     GetIt.I.registerLazySingleton<AuthStore>(() => AuthStore(
         authRepo: GetIt.I<AuthRepoImp>(),
         navigatorState: GetIt.I<GlobalKey<NavigatorState>>()));
   }
-  static void resetServices(){
+
+  static void resetServices() {
     GetIt.I.resetLazySingleton<AdminStore>();
     GetIt.I.resetLazySingleton<ProductsStore>();
     GetIt.I.resetLazySingleton<HomeStore>();
